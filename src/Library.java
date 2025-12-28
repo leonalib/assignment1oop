@@ -1,28 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Library {
     private int LibraryId;
     private String LibraryName;
+    private List<Book> books = new ArrayList<>();
 
-    public Library(int LibraryId, String LibraryName){
+    public Library(int LibraryId, String LibraryName) {
         this.LibraryId = LibraryId;
         this.LibraryName = LibraryName;
     }
 
-    public String getLibraryName(){
-        return LibraryName;
+    public void addBook(Book book) {
+        books.add(book);
     }
 
-    public int getLibraryId(){
-        return LibraryId;
+    public Book findBookByTitle(String title) {
+        for (Book b : books) {
+            if (b.getTitle().equalsIgnoreCase(title)) {
+                return b;
+            }
+        }
+        return null;
     }
 
-    public void setLibraryName(String LibraryName){
-        this.LibraryName = LibraryName;
+    @Override
+    public String toString() {
+        return "Library{id=" + LibraryId +
+                ", name='" + LibraryName +
+                "', books=" + books.size() + "}";
     }
-
-    public void printInfo(){
-        System.out.println(
-                "Library Id: " + LibraryId +
-                        ", Library Name: " + LibraryName
-        );
-
-}}
+}
