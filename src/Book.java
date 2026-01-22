@@ -1,49 +1,31 @@
-class Book {
-    private int BookId;
-    private String Title;
-    private String Author;
+public class Book {
+    private int id;
+    private String title;
+    private String author;
 
-    public Book(int BookId, String Title, String Author) {
-        this.BookId = BookId;
-        this.Title = Title;
-        this.Author = Author;
+    public Book(int id, String title, String author) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
     }
 
-    public int getBookId() {
-        return BookId;
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public String getAuthor() {
-        return Author;
-    }
-
-    public void setTitle(String Title) {
-        this.Title = Title;
-    }
-
-    public void setAuthor(String Author) {
-        this.Author = Author;
+        return author;
     }
 
     @Override
     public String toString() {
-        return "Book{id=" + BookId + ", title='" + Title + "', author='" + Author + "'}";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Book)) return false;
-        Book book = (Book) o;
-        return BookId == book.BookId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Integer.hashCode(BookId);
+        return "Book{id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                '}';
     }
 }

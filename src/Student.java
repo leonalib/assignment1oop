@@ -6,6 +6,8 @@ class Student extends LibraryUser {
 
     @Override
     public String getRole() {
-        return "Student";
+        return "STUDENT";
     }
 }
+
+//without dao
